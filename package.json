@@ -1,0 +1,22 @@
+{
+  "name": "critical-path",
+  "version": "0.0.0",
+  "description": "implementation of the critical path algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test",
+    "doc": "jsdoc -d doc lib"
+  },
+  "keywords": [
+    "scheduling",
+    "critical-path"
+  ],
+  "author": "lausan",
+  "license": "ISC",
+  "devDependencies": {
+    "shuffle-array": "^0.1.0"
+  },
+  "dependencies": {
+    "lodash": "^3.9.0"
+  }
+}
