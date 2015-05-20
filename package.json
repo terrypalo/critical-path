@@ -1,6 +1,6 @@
 {
   "name": "critical-path",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "implementation of the critical path algorithm",
   "main": "index.js",
   "scripts": {
