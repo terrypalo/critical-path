@@ -7,12 +7,20 @@
     "test": "tap test",
     "doc": "jsdoc -d doc lib"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlburkhead/critical-path.git"
+  },
   "keywords": [
     "scheduling",
     "critical-path"
   ],
   "author": "lausan",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlburkhead/critical-path/issues"
+  },
+  "homepage": "http://jlburkhead.github.io/critical-path/doc/",
   "devDependencies": {
     "shuffle-array": "^0.1.0"
   },
