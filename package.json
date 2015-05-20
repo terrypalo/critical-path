@@ -22,7 +22,8 @@
   },
   "homepage": "http://jlburkhead.github.io/critical-path/doc/",
   "devDependencies": {
-    "shuffle-array": "^0.1.0"
+    "shuffle-array": "^0.1.0",
+    "tap": "^1.0.10"
   },
   "dependencies": {
     "lodash": "^3.9.0"
