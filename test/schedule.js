@@ -23,10 +23,21 @@ test("costly dependent tasks are cleared", function(t) {
   t.plan(1);
 
   var t1 = new Task({cost: 1000});
-  var t2 = new Task({cost: 1, depends: t1});
+  var t2 = new Task({cost: 2, depends: t1});
+  var t3 = new Task({cost: 1, depends: t1});
 
-  var s = schedule([t1, t2], 2);
+  var s = schedule([t1, t2, t3], 2);
 
-  t.similar(s, {cost: 1001, workers: [[t1, t2], []]});
+  var expected = [
+    [
+      {start: 0, finish: 1000, task: t1},
+      {start: 1000, finish: 1002, task: t2}
+    ],
+    [
+      {start: 1000, finish: 1001, task: t3}
+    ]
+  ];
+
+  t.similar(s, expected);
 
 });

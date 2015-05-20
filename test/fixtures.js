@@ -31,13 +31,21 @@ module.exports = function() {
   var t1 = ex2.t1 = new Task({name: "t1", cost: 6, completeBefore: t5});
   ex2.tasks = [t1, t2, t3, t4, t5, t6, t7, t8, t9];
   ex2.priority = [t3, t2, t1, t5, t4, t6, t9, t7, t8];
-  ex2.schedule = {
-    cost: 35,
-    workers: [
-      [t3, t4, t6, t7, t8],
-      [t2, t1, t5, t9]
+  ex2.schedule = [
+    [
+      {start: 0, finish: 8, task: t3},
+      {start: 8, finish: 19, task: t4},
+      {start: 19, finish: 26, task: t6},
+      {start: 26, finish: 31, task: t7},
+      {start: 31, finish: 35, task: t8}
+    ],
+    [
+      {start: 0, finish: 7, task: t2},
+      {start: 7, finish: 13, task: t1},
+      {start: 13, finish: 21, task: t5},
+      {start: 21, finish: 31, task: t9}
     ]
-  };
+  ];
 
   return {
     ex1: ex1,
