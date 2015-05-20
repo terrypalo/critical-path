@@ -193,6 +193,15 @@ test("addCompleteBefore", function(t) {
     tt.equal(foo.dependsOn(baz), true);
   });
 
+  t.test("throws on circular dependencies", function(tt) {
+    tt.plan(3);
+    var t1 = new Task({cost: 1});
+    var t2 = new Task({cost: 1, completeBefore: t1});
+    tt.throws(function() { t1.addCompleteBefore(t2); });
+    tt.similar(t1.completeBefore, []);
+    tt.similar(t2.depends, []);
+  });
+
   t.end();
 
 });
@@ -219,6 +228,15 @@ test("addDependency", function(t) {
 
     tt.equal(baz.dependsOn(foo), true);
     tt.equal(foo.neededBy(baz), true);
+  });
+
+  t.test("throws on circular dependencies", function(tt) {
+    tt.plan(3);
+    var t1 = new Task({cost: 1});
+    var t2 = new Task({cost: 1, depends: t1});
+    tt.throws(function() { t1.addDependency(t2); });
+    tt.similar(t2.completeBefore, []);
+    tt.similar(t1.depends, []);
   });
 
   t.end();
