@@ -41,3 +41,27 @@ test("costly dependent tasks are cleared", function(t) {
   t.similar(s, expected);
 
 });
+
+test("both workers are freed after a dependent", function(t) {
+
+  var foo = new Task({name: "foo", cost: 10});
+  var bar = new Task({name: "bar", cost: 5});
+  var baz = new Task({name: "baz", cost: 4, depends: [foo, bar]});
+  var qux = new Task({name: "tt", cost: 3, depends: [foo, bar]});
+
+  var s = schedule([foo, bar, baz, qux], 2);
+
+  var expected = [
+    [
+      {start: 0, finish: 10, task: foo},
+      {start: 10, finish: 14, task: baz}
+    ],
+    [
+      {start: 0, finish: 5, task: bar},
+      {start: 10, finish: 13, task: qux}
+    ]
+  ];
+
+  t.similar(s, expected);
+
+});
