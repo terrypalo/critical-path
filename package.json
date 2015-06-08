@@ -24,7 +24,7 @@
   "devDependencies": {
     "coveralls": "^2.11.2",
     "shuffle-array": "^0.1.0",
-    "tap": "^1.0.10"
+    "tap": "^1.2.0"
   },
   "dependencies": {
     "lodash": "^3.9.0"
