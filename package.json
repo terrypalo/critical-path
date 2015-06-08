@@ -4,7 +4,7 @@
   "description": "implementation of the critical path algorithm",
   "main": "index.js",
   "scripts": {
-    "test": "tap test",
+    "test": "tap test --coverage",
     "doc": "jsdoc -d doc lib"
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "http://jlburkhead.github.io/critical-path/doc/",
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "shuffle-array": "^0.1.0",
     "tap": "^1.0.10"
   },
