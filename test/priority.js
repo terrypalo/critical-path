@@ -43,13 +43,21 @@ test("example2", function(t) {
 });
 
 test("ties are broken with dependency", function(t) {
-  t.plan(1);
+  t.plan(2);
 
-  var a = new Task({cost: 0});
-  var b = new Task({cost: 0, completeBefore: a});
+  var a, b, c, d, tasks;
 
-  var tasks = priority([a, b]);
+  a = new Task({cost: 0});
+  b = new Task({cost: 0, completeBefore: a});
+
+  tasks = priority([a, b]);
 
   t.similar(tasks, [b, a]);
+
+  c = new Task({cost: 0});
+  d = new Task({cost: 0, dependsOn: c});
+
+  tasks = priority([c, d]);
+  t.similar(tasks, [c, d]);
 
 });
