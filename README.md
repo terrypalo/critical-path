@@ -1,4 +1,6 @@
 # critical-path
+Updated for personal use. Not tested to work 100%.
+
 [![Build Status](https://travis-ci.org/jlburkhead/critical-path.svg?branch=master)](https://travis-ci.org/jlburkhead/critical-path)
 [![Coverage Status](https://coveralls.io/repos/jlburkhead/critical-path/badge.svg?branch=master)](https://coveralls.io/r/jlburkhead/critical-path?branch=master)
 
@@ -12,3 +14,4 @@ npm install critical-path
 ```
 
 [jsdoc](http://jlburkhead.github.io/critical-path/doc)
+
